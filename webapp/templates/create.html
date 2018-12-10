@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title_block %}Create{% endblock %}
+{% block menu_links %}
+    <li><a href="{% url "product__index" %}">На главную</a></li>
+
+{% endblock %}
+
+{% block content %}
+<h1>Create resource</h1>
+
+<form action="/create" method="post">
+    {% csrf_token %}
+
+    <label>Name of product:</label><br/>
+    <input type="text" name="name_of_product"/><br/>
+
+    <label>Description:</label><br/>
+    <textarea name="content"></textarea><br/>
+
+    <label>Price:</label><br/>
+    <input type="number" step="0.01" name="price"/><br/>
+    <br/>
+    <input type="submit" value="Send"/>
+</form>
+
+{% endblock %}

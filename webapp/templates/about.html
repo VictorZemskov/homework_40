@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title_block %}About Shop{% endblock %}
+{% block menu_links %}
+    <li><a href="{% url "product__index" %}">На главную</a></li>
+
+{% endblock %}
+
+{% block content %}
+    <h1>Овощной магазин "Сетка"</h1>
+{#    {% for product in products %}#}
+        <h2>Все продукты только что с грядки!</h2>
+        <hr>
+{#    {% endfor %}#}
+{% endblock %}

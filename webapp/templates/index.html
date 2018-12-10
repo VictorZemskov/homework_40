@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title_block %}Product Index{% endblock %}
+{% block menu_links %}
+    <li><a href="{% url "product__create" %}">Создать товар</a></li>
+
+{% endblock %}
+
+{% block content %}
+    <h1>All products</h1>
+    {% for product in products %}
+        <h2><a href="{% url "product__view" product.pk %}">{{ product.name_of_product }}</a> {{ product.price }} сом</h2>
+        <hr>
+    {% endfor %}
+{% endblock %}

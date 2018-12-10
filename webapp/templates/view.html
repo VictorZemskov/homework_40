@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title_block %}View{% endblock %}
+{% block menu_links %}
+    <li><a href="{% url "product__index" %}">На главную</a></li>
+
+{% endblock %}
+
+{% block content %}
+    <h1>Description:</h1>
+    <h2>{{ product.name_of_product }}</h2>
+    <p>{{ product.description }}</p>
+    <p>По цене: {{ product.price }} сом</p>
+{% endblock %}

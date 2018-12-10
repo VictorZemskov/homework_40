@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title_block %}{% endblock %}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: rgb(333, 250, 203);
+            color: #6a7dff;
+            margin-top: 30px;
+        }
+
+        a {
+            {#text-decoration: none;#}
+            color: inherit;
+        }
+
+        a:hover, a:visited {
+            color: inherit;
+        }
+
+        .navbar {
+            display: block;
+            background: #6a7dff;
+            position: fixed;
+            top: 0;
+            right: 0;
+            left: 0;
+            font-size: 0;
+            box-sizing: border-box;
+            padding: 7px 30px;
+        }
+
+        .menu {
+            font-size: 16px;
+            line-height: 1;
+            padding: 0;
+            margin: 0;
+            display: inline-block;
+            color: #fffee8;
+        }
+
+        .menu li {
+            display: inline-block;
+        }
+
+        .menu li a {
+            display: inline-block;
+        }
+
+        .menu li a:hover {
+            color: #ffc122;
+        }
+
+        h1 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <ul class="menu">
+            {% block menu_links %}{% endblock %}
+            <li><a href="{% url "product__about" %}">О магазине</a></li>
+            <li><a href="{% url "product__contacts" %}">Контакты</a></li>
+        </ul>
+    </nav>
+    {% block content %}{% endblock %}
+</body>
+</html>
